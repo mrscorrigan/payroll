@@ -57,13 +57,11 @@ class Employee:
         return base_salary + bonus
 
     def get_details(self):
-        return ' \n------------------------\n First Name: %s\n Surname %s\n Years Worked: %s\n Employee Number: %s\n Salary: %s\n'  \
+        return ' \n------------------------\n First Name: %s\n Surname %s\n Years Worked: %s\n Employee Number: %s\n Salary: %s\n' \
                % (self.fname, self.sname, self.noofyears, self.employee_number, self.calculate_salary())
 
 
 class Developer(Employee):
-    lang = "Python"
-
     def __init__(self, fname, sname, noofyears, lang, base_salary=5000):
         self.lang = lang
         Employee.__init__(self, fname, sname, noofyears, base_salary)
@@ -73,5 +71,12 @@ class Developer(Employee):
         if self.lang.lower() == "python":
             general_salary += general_salary * .1
             old_salary = general_salary - Employee.calculate_salary(self)
-            print "---------------------------------------------------\n\n For employee %s %s Python bonus is %s" % (self.fname, self.sname, old_salary)
+            print "---------------------------------------------------\n\n For employee %s %s Python bonus is %s" % (
+            self.fname, self.sname, old_salary)
+        if self.lang.lower() == "java":
+            general_salary += general_salary * .5
+            old_salary = general_salary - Employee.calculate_salary(self)
+            print "---------------------------------------------------\n\n For employee %s %s Java bonus is %s" % (
+            self.fname, self.sname, old_salary)
+
         return general_salary

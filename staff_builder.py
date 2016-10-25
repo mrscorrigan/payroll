@@ -16,6 +16,7 @@
 from staff.employees import Employee
 from staff.employees import Developer
 
+
 emp1 = Employee("Tom", "Tester", 1, 1000)
 print emp1.get_details()
 
@@ -27,6 +28,9 @@ print dev1.get_details()
 
 dev1 = Developer("Tom", "Jones", 1, "Java", 1000 )
 print dev1.get_details()
+dev1 = Developer("Tom", "O'Shea", 1, "Java", 1000 )
+print dev1.get_details()
+
 
 
 
